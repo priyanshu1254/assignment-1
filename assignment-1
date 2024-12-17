@@ -1,0 +1,68 @@
+Q1. For Loop vs While Loop
+For Loop: A for loop is generally used when the number of iterations is known beforehand, or when iterating over a sequence (like a list, string, or range).
+
+While Loop: A while loop is used when the number of iterations is not known and the loop continues until a certain condition is met.
+
+Example:
+For Loop: Use this when you want to iterate over a fixed range or a collection of items.
+
+for i in range(1, 6):
+    print(i)
+
+While Loop: Use this when the number of iterations depends on a condition.
+
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+
+Q2. Python Program to Print Sum and Product of First 10 Natural Numbers
+
+sum_for = 0
+product_for = 1
+for i in range(1, 11):
+    sum_for += i
+    product_for *= i
+
+print("Using For Loop:")
+print("Sum:", sum_for)
+print("Product:", product_for)
+
+Q3. Python Program to Compute the Electricity Bill for a Household
+
+def calculate_electricity_bill(units):
+    if units <= 100:
+        bill = units * 4.5
+    elif units <= 200:
+        bill = 100 * 4.5 + (units - 100) * 6
+    elif units <= 300:
+        bill = 100 * 4.5 + 100 * 6 + (units - 200) * 10
+    else:
+        bill = 100 * 4.5 + 100 * 6 + 100 * 10 + (units - 300) * 20
+    return bill
+units_consumed = float(input("Enter the units of electricity consumed: "))
+bill = calculate_electricity_bill(units_consumed)
+print(f"The total electricity bill is: Rs. {bill}")
+
+Q4. Python Program to Calculate Cube of Numbers and Filter by Divisibility
+
+numbers = list(range(1, 101))
+divisible_by_4_or_5 = []
+
+for num in numbers:
+    cube = num ** 3
+    if cube % 4 == 0 or cube % 5 == 0:
+        divisible_by_4_or_5.append(num)
+
+print("Numbers whose cubes are divisible by 4 or 5:", divisible_by_4_or_5)
+
+Q5. Program to Count Vowels in a Given String
+
+string = "I want to become a data scientist"
+vowels = "aeiouAEIOU"
+vowel_count = 0
+for char in string:
+    if char in vowels:
+        vowel_count += 1
+
+print(f"Number of vowels in the string: {vowel_count}")
